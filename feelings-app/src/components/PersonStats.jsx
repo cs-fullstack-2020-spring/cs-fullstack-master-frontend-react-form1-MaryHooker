@@ -48,15 +48,15 @@ class PersonStats extends Component {
                         <legend>Feelings</legend>
                         <div>
                             <label htmlFor="name">Name:</label>
-                            <input type="text" id='name' name='name' value={this.state.name} onChange={this.changeInput}/>
+                            <input type="text" id='name' name='name' value={this.state.name} onChange={this.changeInputs}/>
                         </div>
                         <div>
                             <label htmlFor="age">Age:</label>
-                            <input type="text" id='age' name='age' value={this.state.age} onChange={this.changeInput}/>
+                            <input type="text" id='age' name='age' value={this.state.age} onChange={this.changeInputs}/>
                         </div>
                         <div>
                             <label htmlFor="feelings">How do you feel?</label>
-                            <input type="text" id='feelings' name='feelings' value={this.state.feelings} onChange={this.changeInput}/>
+                            <input type="text" id='feelings' name='feelings' value={this.state.feelings} onChange={this.changeInputs}/>
                         </div>
 
                         <button onClick={this.handleSubmission}>Submit</button>
