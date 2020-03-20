@@ -10,6 +10,7 @@ class PersonStats extends Component {
          }
     }
 
+    //function that handles the changes of the input fields
     changeInputs = (event) =>{
         if(event.target.name==='name'){
             this.setState(
@@ -32,12 +33,24 @@ class PersonStats extends Component {
         }
     }
 
+    //function that handles when the button is clicked
     handleSubmission = (event) =>{
         event.preventDefault();
+       //referencing the empty div by id and saving it inside of a variable
+        let stats = document.getElementById('stats')
+        //using .innerText to display what i want rendered in the empty div
+        stats.innerText =  `Hello ${this.state.name}. Your age is ${this.state.age} and you're feeling ${this.state.feelings}.`
+            //reset the form
+        this.setState(
+            {
+                name: '',
+                age: 0,
+                feelings: '',
+            }
+        )
+        //sanity
+        console.log(`hello ${this.state.name}`)
 
-        this.props.callBackName(this.state.name)
-        this.props.callBackAge(this.state.age)
-        this.props.callBackFeelings(this.state.feelings)
     }
 
     render() { 
@@ -62,6 +75,10 @@ class PersonStats extends Component {
                         <button onClick={this.handleSubmission}>Submit</button>
                     </fieldset>
                 </form>
+                {/* created empty div to hold text rendered byt the button */}
+                <div>
+                <p id='stats'></p>
+                </div>
             </div>
          );
     }
